@@ -125,4 +125,6 @@ ansible all -m command -a “cat /etc/hosts”
 
 ```
 ssh-copy-id user@server - копируем ssh ключ для соединения без пароля
+ansible-doc -l - доступные модули
+ansiblr-doc shell - инструкция по модулю shell
 ```
