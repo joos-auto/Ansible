@@ -115,7 +115,7 @@ ansible all (все сервера) -i (путь до инвентори - не 
 **Ad-hoc команды** — это самый быстрый способ начать использовать Ansible. Для запуска Ansible в режиме ad-hoc не нужно писать плейбуки, достаточно помнить минимальный синтаксис
 ```
 ansible all -m ping
-ansible all -m command -a “cat /etc/hosts”
+ansible all -m command -a 'cat /etc/hosts'
 ```
 **Часто используемые модули**
 
@@ -131,10 +131,10 @@ ansible all -m command -a “cat /etc/hosts”
 ssh-copy-id user@server - копируем ssh ключ для соединения без пароля
 ansible-doc -l - доступные модули
 ansible-doc shell - инструкция по модулю shell
-ansible all -m shell -a "hostname" - выполнение команды hostname на серверах
+ansible all -m shell -a 'hostname' - выполнение команды hostname на серверах
 ansible webservers -m shell -b (become - повышение до root или через cfg) -a "yum install mc"
 ansible-doc yum - описание модуля yum
-ansible webservers -m yum -b -a "name=mc state=present" - установка последней версии и если установлено то ничего не делать
-ansible webservers -m yum -b -a "name=mc state=absent" - удаление
-ansible webservers -m yum -b -a "name=mc state=absent" -vvv (-v - verbose от v до vvv - более подробный вывод)
+ansible webservers -m yum -b -a 'name=mc state=present' - установка последней версии и если установлено то ничего не делать
+ansible webservers -m yum -b -a 'name=mc state=absent' - удаление
+ansible webservers -m yum -b -a 'name=mc state=absent' -vvv (-v - verbose от v до vvv - более подробный вывод)
 ```
